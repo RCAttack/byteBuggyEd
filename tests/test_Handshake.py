@@ -4,8 +4,8 @@
 import sys
 import unittest
 
-from wifite.model.handshake import Handshake
-from wifite.util.process import Process
+from byteBuggy.model.handshake import Handshake
+from byteBuggy.util.process import Process
 
 sys.path.insert(0, '..')
 

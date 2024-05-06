@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys
 import unittest
-from wifite.tools.airmon import Airmon
+from byteBuggy.tools.airmon import Airmon
 
 sys.path.insert(0, '..')
 

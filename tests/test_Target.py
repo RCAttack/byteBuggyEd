@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-from wifite.tools.airodump import Airodump
+from byteBuggy.tools.airodump import Airodump
 
 
 class TestTarget(unittest.TestCase):

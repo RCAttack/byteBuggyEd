@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from wifite.tools.airodump import Airodump
+from byteBuggy.tools.airodump import Airodump
 import unittest
 
 sys.path.insert(0, '..')

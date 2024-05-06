@@ -5,7 +5,7 @@ try:
 except:
     raise ImportError("setuptools is required to install wifite2")
 
-from wifite.config import Configuration
+from byteBuggy.config import Configuration
 
 setup(
     name='wifite',

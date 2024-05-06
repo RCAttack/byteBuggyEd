@@ -1,3 +1,4 @@
+ 
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -118,8 +119,8 @@ class Scanner(object):
             return False  # No specific target from user.
 
         for target in self.targets:
-            # if Configuration.wps_only and target.wps not in [WPSState.UNLOCKED, WPSState.LOCKED]:
-            #    continue
+            if Configuration.wps_only and target.wps not in [WPSState.UNLOCKED, WPSState.LOCKED]:
+               continue
             if bssid and target.bssid and bssid.lower() == target.bssid.lower():
                 self.target = target
                 break
@@ -169,8 +170,7 @@ class Scanner(object):
         # First row: columns
         Color.p('   NUM')
         Color.p('                      ESSID')
-        if Configuration.show_bssids:
-            Color.p('              BSSID')
+        Color.p('              BSSID')
 
         if Configuration.show_manufacturers:
             Color.p('           MANUFACTURER')
@@ -180,8 +180,7 @@ class Scanner(object):
         # Second row: separator
         Color.p('   ---')
         Color.p('  -------------------------')
-        if Configuration.show_bssids:
-            Color.p('  -----------------')
+        Color.p('  -----------------')
 
         if Configuration.show_manufacturers:
             Color.p('  ---------------------')
@@ -192,22 +191,18 @@ class Scanner(object):
         for idx, target in enumerate(self.targets, start=1):
             Color.clear_entire_line()
             Color.p('   {G}%s  ' % str(idx).rjust(3))
-            Color.pl(target.to_str(
-                Configuration.show_bssids,
-                Configuration.show_manufacturers
-            )
-            )
+            Color.pl(target.to_str())
 
     @staticmethod
     def get_terminal_height():
         import os
-        (rows, columns) = os.popen('stty size', 'r').read().split()
+        rows, _ = os.popen('stty size', 'r').read().split()
         return int(rows)
 
     @staticmethod
     def get_terminal_width():
         import os
-        (rows, columns) = os.popen('stty size', 'r').read().split()
+        _, columns = os.popen('stty size', 'r').read().split()
         return int(columns)
 
     def select_targets(self):

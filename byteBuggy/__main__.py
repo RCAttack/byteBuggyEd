@@ -4,7 +4,7 @@
 try:
     from .config import Configuration
 except (ValueError, ImportError) as e:
-    raise Exception("You may need to run wifite from the root directory (which includes README.md)", e) from e
+    raise Exception("You may need to run byteBuggy from the root directory (which includes README.md)", e) from e
 
 
 from .util.color import Color
@@ -13,11 +13,11 @@ import os
 import subprocess
 
 
-class Wifite(object):
+class ByteBuggy(object):
 
     def __init__(self):
         """
-        Initializes Wifite.
+        Initializes byteBuggy.
         Checks that its running under *nix, with root permissions and ensures dependencies are installed.
         """
 
@@ -26,10 +26,10 @@ class Wifite(object):
         Configuration.initialize(load_interface=False)
 
         if os.name == 'nt':
-            Color.pl('{!} {R}error: {O}wifite{R} must be run under a {O}*NIX{W}{R} like OS')
+            Color.pl('{!} {R}error: {O}byteBuggy{R} must be run under a {O}*NIX{W}{R} like OS')
             Configuration.exit_gracefully(0)
         if os.getuid() != 0:
-            Color.pl('{!} {R}error: {O}wifite{R} must be run as {O}root{W}')
+            Color.pl('{!} {R}error: {O}byteBuggy{R} must be run as {O}root{W}')
             Color.pl('{!} {R}re-run with {O}sudo{W}')
             Configuration.exit_gracefully(0)
 
@@ -59,13 +59,17 @@ class Wifite(object):
 
     @staticmethod
     def print_banner():
-        """Displays ASCII art of the highest caliber."""
-        Color.pl(r' {G}  .     {GR}{D}     {W}{G}     .    {W}')
-        Color.pl(r' {G}.´  ·  .{GR}{D}     {W}{G}.  ·  `.  {G}wifite2 {D}%s{W}' % Configuration.version)
-        Color.pl(r' {G}:  :  : {GR}{D} (¯) {W}{G} :  :  :  {W}{D}a wireless auditor by derv82{W}')
-        Color.pl(r' {G}`.  ·  `{GR}{D} /¯\ {W}{G}´  ·  .´  {W}{D}maintained by kimocoder{W}')
-        Color.pl(r' {G}  `     {GR}{D}/¯¯¯\{W}{G}     ´    {C}{D}https://github.com/kimocoder/wifite2{W}')
-        Color.pl('')
+        print ('Origina Author: derv82')
+        print('Original Repository: https://github.com/derv82/wifite2.git')
+        print('''
+                ___.            __        __________                           
+\_ |__ ___.__._/  |_  ____\______   \__ __  ____   ____ ___.__.
+ | __ <   |  |\   __\/ __ \|    |  _/  |  \/ ___\ / ___<   |  |
+ | \_\ \___  | |  | \  ___/|    |   \  |  / /_/  > /_/  >___  |
+ |___  / ____| |__|  \___  >______  /____/\___  /\___  // ____|
+     \/\/                \/       \/     /_____//_____/ \/     
+        
+              ''')
 
     @staticmethod
     def scan_and_attack():
@@ -100,8 +104,8 @@ class Wifite(object):
 
 def entry_point():
     try:
-        wifite = Wifite()
-        wifite.start()
+        byteBuggy = ByteBuggy()
+        byteBuggy.start()
     except Exception as e:
         Color.pexception(e)
         Color.pl('\n{!} {R}Exiting{W}\n')

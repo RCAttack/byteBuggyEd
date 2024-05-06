@@ -156,7 +156,7 @@ class Target(object):
         if bssid_multicast.match(self.bssid):
             raise Exception(f'Ignoring target with Multicast BSSID ({self.bssid})')
 
-    def to_str(self, show_bssid=False, show_manufacturer=False):
+    def to_str(self, show_bssid=True, show_manufacturer=False):
         # sourcery no-metrics
         """
             *Colored* string representation of this Target.
@@ -164,7 +164,8 @@ class Target(object):
         """
 
         max_essid_len = 24
-        essid = self.essid if self.essid_known else f'({self.bssid})'
+        essid = self.essid if self.essid is not None else ''
+        # essid = self.essid if self.essid_known else f'({self.bssid})'
         # Trim ESSID (router name) if needed
         if len(essid) > max_essid_len:
             essid = f'{essid[:max_essid_len - 3]}...'
