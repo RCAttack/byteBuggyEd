@@ -1,8 +1,8 @@
-## Bytebuggy
-# Description
+# Bytebuggy
+## Description
 Bytebuggy is a repository dedicated to demonstrating the usage of various tools from the Aircrack-ng suite, namely Airmon, Airodump, Aireplay, and Aircrack. These tools are commonly used for wireless network auditing and penetration testing. This repository provides code examples and explanations to help users understand and utilize these tools effectively.
 
-Tools Covered
+##Tools Covered
 Airmon: Airmon is a script used to enable or disable monitor mode on wireless interfaces. Monitor mode is essential for capturing and analyzing wireless traffic.
 Airodump: Airodump is a packet sniffer used for capturing and analyzing packets within a wireless network. It is commonly used to discover and identify nearby wireless networks and their associated clients.
 Aireplay: Aireplay is used for injecting packets into a wireless network to generate traffic, which can be useful for testing the security of a network or conducting attacks such as deauthentication attacks.
