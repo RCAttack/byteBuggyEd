@@ -12,15 +12,9 @@ This repository contains code examples, tutorials, and explanations for using ea
 
 ## Instalation
 
-*Requires Linux OS*
-*Raspberry Pi*
-*Wifi adapter to go onto Pi*
-
 Clone the repository to your local machine:
 
 git clone https://github.com/RCAttack/byteBuggyEd.git
-
-Install folders ByteBuggy onto Raspberry Pi 
 
 Code snippets demonstrating the usage of Airmon to enable monitor mode on wireless interfaces.
 Examples of Airodump usage for capturing wireless traffic and analyzing network information.
