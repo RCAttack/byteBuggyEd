@@ -2,7 +2,7 @@
 ## Description
 Bytebuggy is a repository dedicated to demonstrating the usage of various tools from the Aircrack-ng suite, namely Airmon, Airodump, Aireplay, and Aircrack. These tools are commonly used for wireless network auditing and penetration testing. This repository provides code examples and explanations to help users understand and utilize these tools effectively.
 
-##Tools Covered
+## Tools Covered
 Airmon: Airmon is a script used to enable or disable monitor mode on wireless interfaces. Monitor mode is essential for capturing and analyzing wireless traffic.
 Airodump: Airodump is a packet sniffer used for capturing and analyzing packets within a wireless network. It is commonly used to discover and identify nearby wireless networks and their associated clients.
 Aireplay: Aireplay is used for injecting packets into a wireless network to generate traffic, which can be useful for testing the security of a network or conducting attacks such as deauthentication attacks.
@@ -19,10 +19,7 @@ Clone the repository to your local machine:
 bash
 Copy code
 git clone https://github.com/RCAttack/byteBuggyEd.git
-Navigate to the desired tool directory (e.g., airmon, airodump, aireplay, or aircrack) and explore the code examples and tutorials provided.
 Experiment with the tools in a controlled environment to gain proficiency and understanding.
-Contributions
-Contributions to this repository are welcome. If you have code examples, tutorials, or improvements to existing content related to the Aircrack-ng suite, feel free to submit a pull request.
 
 
 Disclaimer
